@@ -6,7 +6,8 @@ cache:
     - $HOME/.m2
 
 before_install:
+  - mkdir $HOME/report
   - chmod +x mvnw
 
 script:
-  - ./mvnw test org.jacoco:jacoco-maven-plugin:report coveralls:report -B -Punit-test
+  - ./mvnw test -B -Punit-test

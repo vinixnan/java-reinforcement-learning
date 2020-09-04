@@ -3,13 +3,12 @@ jdk: oraclejdk11
 
 cache:
   directories:
-  - $HOME/.m2
+    - $HOME/.m2
 
-install:
-  - mvn test-compile -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+before_install:
+  - chmod +x mvnw
 
 script:
-  - mvn clean test jacoco:report
-
-after_success:
-  - mvn coveralls:report
+  - ./mvwn org.jacoco:jacoco-maven-plugin:0.8.5
+  - ./mvnw com.github.spotbugs:spotbugs-maven-plugin:4.0.4
+  - ./mvnw test jococo:report coveralls:report -B -Punit-test

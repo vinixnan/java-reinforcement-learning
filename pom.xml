@@ -98,7 +98,6 @@
         <failsafe.version>3.0.0-M5</failsafe.version>
         <checkstyle.version>3.1.1</checkstyle.version>
         <pmd.version>3.5</pmd.version>
-        <jacoco.version>0.8.6-SNAPSHOT</jacoco.version>
 
         <fastjson.version>1.2.73</fastjson.version>
 
@@ -125,9 +124,6 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>${surefire.version}</version>
                         <configuration>
-                            <argLine>
-                                --illegal-access=permit
-                            </argLine>
                             <skipTests>true</skipTests>
                             <argLine>-Dfile.encoding=UTF-8</argLine>
                         </configuration>
@@ -148,9 +144,6 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>${surefire.version}</version>
                         <configuration>
-                            <argLine>
-                                --illegal-access=permit
-                            </argLine>
                             <skipTests>true</skipTests>
                         </configuration>
                     </plugin>
@@ -230,9 +223,6 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>${surefire.version}</version>
                         <configuration>
-                            <argLine>
-                                --illegal-access=permit
-                            </argLine>
                             <forkCount>1</forkCount>
                             <reuseForks>false</reuseForks>
                             <argLine>-Dfile.encoding=UTF-8</argLine>
@@ -246,8 +236,6 @@
                             </excludes>
                         </configuration>
                     </plugin>
-
-
 
                     <plugin>
                         <groupId>com.github.spotbugs</groupId>
@@ -311,9 +299,6 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>${surefire.version}</version>
                         <configuration>
-                            <argLine>
-                                --illegal-access=permit
-                            </argLine>
                             <skipTests>true</skipTests>
                             <argLine>-Dfile.encoding=UTF-8</argLine>
                         </configuration>
@@ -524,7 +509,6 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.73</version>
         </dependency>
-
 
     </dependencies>
 

@@ -96,7 +96,6 @@
 
         <surefire.version>3.0.0-M5</surefire.version>
         <failsafe.version>3.0.0-M5</failsafe.version>
-        <findbugs.version>3.0.5</findbugs.version>
         <cobertura.version>2.7</cobertura.version>
         <checkstyle.version>3.1.1</checkstyle.version>
         <pmd.version>3.5</pmd.version>
@@ -252,14 +251,14 @@
 
 
                     <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>findbugs-maven-plugin</artifactId>
-                        <version>3.0.5</version>
+                        <groupId>com.github.spotbugs</groupId>
+                        <artifactId>spotbugs-maven-plugin</artifactId>
+                        <version>4.0.4</version>
                         <configuration>
                             <failOnError>false</failOnError>
-                            <findbugsXmlOutput>true</findbugsXmlOutput>
+                            <spotbugsXmlOutput>true</spotbugsXmlOutput>
                             <xmlOutput>true</xmlOutput>
-                            <findbugsXmlOutputDirectory>${project.build.directory}/findbugs</findbugsXmlOutputDirectory>
+                            <spotbugsXmlOutputDirectory>${project.build.directory}/spotbugs</spotbugsXmlOutputDirectory>
                         </configuration>
                         <executions>
                             <execution>

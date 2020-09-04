@@ -96,7 +96,6 @@
 
         <surefire.version>3.0.0-M5</surefire.version>
         <failsafe.version>3.0.0-M5</failsafe.version>
-        <cobertura.version>2.7</cobertura.version>
         <checkstyle.version>3.1.1</checkstyle.version>
         <pmd.version>3.5</pmd.version>
         <jacoco.version>0.8.6-SNAPSHOT</jacoco.version>
@@ -258,16 +257,16 @@
                     </plugin>
 
                     <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>cobertura-maven-plugin</artifactId>
-                        <version>2.7</version>
-                        <configuration>
-                            <check>true</check>
-                            <format>xml</format>
-                            <maxmem>256m</maxmem>
-                            <!-- aggregated reports for multi-module projects -->
-                            <aggregate>true</aggregate>
-                        </configuration>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                        <version>0.8.5</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>prepare-agent</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>

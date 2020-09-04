@@ -9,4 +9,4 @@ before_install:
   - chmod +x mvnw
 
 script:
-  - ./mvnw test cobertura:cobertura coveralls:report -B -Punit-test
+  - ./mvnw test jacoco:report coveralls:report -B -Punit-test

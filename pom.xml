@@ -96,7 +96,6 @@
 
         <surefire.version>3.0.0-M5</surefire.version>
         <failsafe.version>3.0.0-M5</failsafe.version>
-        <cobertura.version>2.7</cobertura.version>
         <checkstyle.version>3.1.1</checkstyle.version>
         <pmd.version>3.5</pmd.version>
         <jacoco.version>0.8.6-SNAPSHOT</jacoco.version>

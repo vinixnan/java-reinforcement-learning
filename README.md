@@ -1,7 +1,7 @@
 # java-reinforcement-learning
 Package provides java implementation of reinforcement learning algorithms as described in the book "Reinforcement Learning: An Introduction" by Sutton
 
-[![Build Status](https://travis-ci.org/chen0040/java-reinforcement-learning.svg?branch=master)](https://travis-ci.org/chen0040/java-reinforcement-learning) [![Coverage Status](https://coveralls.io/repos/github/chen0040/java-reinforcement-learning/badge.svg?branch=master)](https://coveralls.io/github/chen0040/java-reinforcement-learning?branch=master)
+[![Build Status](https://travis-ci.org/tens0rfl0w/java-reinforcement-learning.svg?branch=master)](https://travis-ci.org/tens0rfl0w/java-reinforcement-learning) [![Coverage Status](https://coveralls.io/repos/github/tens0rfl0w/java-reinforcement-learning/badge.svg?branch=master)](https://coveralls.io/github/tens0rfl0w/java-reinforcement-learning?branch=master)
 
 
 # Features
@@ -32,18 +32,11 @@ Add the following dependency to your POM file:
 
 ```
 <dependency>
-  <groupId>com.github.chen0040</groupId>
+  <groupId>com.github.tens0rfl0w</groupId>
   <artifactId>java-reinforcement-learning</artifactId>
-  <version>1.0.5</version>
+  <version>1.0.7</version>
 </dependency>
 ```
-
-# Application Samples
-
-The application sample of this library can be found in the following repositories:
-
-* [java-reinforcement-learning-tic-tac-toe](https://github.com/chen0040/java-reinforcement-learning-tic-tac-toe)
-* [java-reinforcement-learning-flappy-bird](https://github.com/chen0040/java-reinforcement-learning-flappy-bird) 
 
 # Usage
 
@@ -52,7 +45,7 @@ The application sample of this library can be found in the following repositorie
 An reinforcement agent, say, Q-Learn agent, can be created by the following java code:
 
 ```java
-import com.github.chen0040.rl.learning.qlearn.QAgent;
+import com.github.tens0rfl0w.rl.learning.qlearn.QAgent;
 
 int stateCount = 100;
 int actionCount = 10;
@@ -82,7 +75,7 @@ Set<Integer> actionsAvailableAtCurrentState = world.getActionsAvailable(agent);
 int actionTaken = agent.selectAction(actionsAvailableAtCurrentState).getIndex();
 ```
 
-The agent can also change to a different action-selection policy available in com.github.chen0040.rl.actionselection package, for example, the following code
+The agent can also change to a different action-selection policy available in com.github.tens0rfl0w.rl.actionselection package, for example, the following code
 switch the action selection policy to soft-max:
 
 ```java
@@ -105,7 +98,7 @@ agent.update(actionTaken, newStateId, reward);
 ### Sample code for R-Learn
 
 ```java
-import com.github.chen0040.rl.learning.rlearn.RAgent;
+import com.github.tens0rfl0w.rl.learning.rlearn.RAgent;
 
 int stateCount = 100;
 int actionCount = 10;
@@ -178,7 +171,7 @@ for(int i=moves.size()-1; i >= 0; --i){
 ### Sample code for Q-Learn
 
 ```java
-import com.github.chen0040.rl.learning.qlearn.QAgent;
+import com.github.tens0rfl0w.rl.learning.qlearn.QAgent;
 
 int stateCount = 100;
 int actionCount = 10;
@@ -251,7 +244,7 @@ for(int i=moves.size()-1; i >= 0; --i){
 ### Sample code for SARSA
 
 ```java
-import com.github.chen0040.rl.learning.sarsa.SarsaAgent;
+import com.github.tens0rfl0w.rl.learning.sarsa.SarsaAgent;
 
 int stateCount = 100;
 int actionCount = 10;
@@ -327,8 +320,8 @@ for(int i=moves.size()-1; i >= 0; --i){
 ### Sample code for Actor Critic Model
 
 ```java
-import com.github.chen0040.rl.learning.actorcritic.ActorCriticAgent;
-import com.github.chen0040.rl.utils.Vec;
+import com.github.tens0rfl0w.rl.learning.actorcritic.ActorCriticAgent;
+import com.github.tens0rfl0w.rl.utils.Vec;
 
 int stateCount = 100;
 int actionCount = 10;

@@ -96,7 +96,6 @@
 
         <surefire.version>3.0.0-M5</surefire.version>
         <failsafe.version>3.0.0-M5</failsafe.version>
-        <findbugs.version>3.0.5</findbugs.version>
         <cobertura.version>2.7</cobertura.version>
         <checkstyle.version>3.1.1</checkstyle.version>
         <pmd.version>3.5</pmd.version>
@@ -247,29 +246,6 @@
                                 <exclude>**/*TestCase.java</exclude>
                             </excludes>
                         </configuration>
-                    </plugin>
-
-
-
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>findbugs-maven-plugin</artifactId>
-                        <version>3.0.5</version>
-                        <configuration>
-                            <failOnError>false</failOnError>
-                            <findbugsXmlOutput>true</findbugsXmlOutput>
-                            <xmlOutput>true</xmlOutput>
-                            <findbugsXmlOutputDirectory>${project.build.directory}/findbugs</findbugsXmlOutputDirectory>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <id>analyze-compile</id>
-                                <phase>compile</phase>
-                                <goals>
-                                    <goal>check</goal>
-                                </goals>
-                            </execution>
-                        </executions>
                     </plugin>
 
                     <plugin>

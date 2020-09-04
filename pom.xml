@@ -283,13 +283,14 @@
                         <groupId>org.jacoco</groupId>
                         <artifactId>jacoco-maven-plugin</artifactId>
                         <version>0.8.5</version>
-                        <configuration>
-                            <check>true</check>
-                            <format>xml</format>
-                            <maxmem>256m</maxmem>
-                            <!-- aggregated reports for multi-module projects -->
-                            <aggregate>true</aggregate>
-                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>prepare-agent</id>
+                                <goals>
+                                    <goal>prepare-agent</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>

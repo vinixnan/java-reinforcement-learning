@@ -9,4 +9,5 @@ before_install:
   - chmod +x mvnw
 
 script:
+  - set MAVEN_OPTS=-Xmx384M
   - ./mvnw test cobertura:cobertura coveralls:report -B -Punit-test

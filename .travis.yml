@@ -9,6 +9,4 @@ before_install:
   - chmod +x mvnw
 
 script:
-  - ./mvnw org.jacoco:jacoco-maven-plugin:0.8.5
-  - ./mvnw com.github.spotbugs:spotbugs-maven-plugin:4.0.4
-  - ./mvnw test jococo:report coveralls:report -B -Punit-test
+  - ./mvnw test org.jacoco:jacoco-maven-plugin:report coveralls:report -B -Punit-test

@@ -5,5 +5,11 @@ cache:
   directories:
   - $HOME/.m2
 
+install:
+  - mvn test-compile -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
 script:
-  - mvn clean test jacoco:report coveralls:report -B -Punit-test
+  - mvn clean test jacoco:report
+
+after_success:
+  - mvn coveralls:report

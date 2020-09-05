@@ -6,8 +6,7 @@ cache:
     - $HOME/.m2
 
 before_install:
-  - mkdir $HOME/report
   - chmod +x mvnw
 
 script:
-  - ./mvnw test -B -Punit-test
+  - ./mvnw clean test jacoco:report coveralls:report

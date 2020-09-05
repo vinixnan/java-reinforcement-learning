@@ -19,8 +19,8 @@ public class SarsaAgentUnitTest {
       int actionCount = 10;
       SarsaAgent agent = new SarsaAgent(stateCount, actionCount);
 
-      double reward = 0; //immediate reward by transiting from prevState to currentState
-      Random random = new Random();
+      double reward; //immediate reward by transiting from prevState to currentState
+       Random random = new Random();
       agent.start(random.nextInt(stateCount));
       int actionTaken = agent.selectAction().getIndex();
       for(int time=0; time < 1000; ++time){

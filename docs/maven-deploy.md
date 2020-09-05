@@ -4,7 +4,7 @@ To deploy to maven snapshot:
 mvn clean deploy
 ```
 
-To deploy a release, make sure the version is not ended with "-SNAPSHOT" and run this command
+To deploy a release, make sure the version does not end with "-SNAPSHOT" and run this command
 
 ```bash
 mvn clean deploy -P release

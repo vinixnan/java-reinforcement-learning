@@ -3,7 +3,6 @@ package com.github.tens0rfl0w.rl.learning.sarsa;
 import com.github.tens0rfl0w.rl.utils.IndexValue;
 
 import java.io.Serializable;
-import java.util.Random;
 import java.util.Set;
 
 
@@ -117,8 +116,8 @@ public class SarsaAgent implements Serializable{
 
     @Override
     public boolean equals(Object obj){
-        if(obj != null && obj instanceof SarsaAgent){
-            SarsaAgent rhs = (SarsaAgent)obj;
+        if (obj instanceof SarsaAgent) {
+            SarsaAgent rhs = (SarsaAgent) obj;
             return prevAction == rhs.prevAction
                     && prevState == rhs.prevState
                     && currentAction == rhs.currentAction

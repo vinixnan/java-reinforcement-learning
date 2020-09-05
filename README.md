@@ -6,7 +6,7 @@ Package provides java implementation of reinforcement learning algorithms as des
 
 # Features
 
-The following reinforcement learning are implemented:
+The following reinforcement learning algorithms are implemented in this project:
 
 * R-Learn
 * Q-Learn
@@ -42,7 +42,7 @@ Add the following dependency to your POM file:
 
 ### Create Agent
 
-An reinforcement agent, say, Q-Learn agent, can be created by the following java code:
+A reinforcement agent, say, Q-Learn agent, can be created by the following java code:
 
 ```java
 import com.github.tens0rfl0w.rl.learning.qlearn.QAgent;
@@ -62,13 +62,13 @@ agent.enableEligibilityTrace(lambda)
 
 ### Select Action
 
-At each time step, a action can be selected by the agent, by calling:
+At each time step, an action can be selected by the agent, by calling:
 
 ```java
 int actionId = agent.selectAction().getIndex();
 ```
 
-If you want to limits the number of possible action at each states (say the problem restrict the actions avaliable at different state), then call:
+If you want to limit the number of possible action at each state (say the problem restrict the actions avaliable at different state), then call:
 
 ```java
 Set<Integer> actionsAvailableAtCurrentState = world.getActionsAvailable(agent);
@@ -121,7 +121,7 @@ for(int time=0; time < 1000; ++time){
 }
 ```
 
-Alternatively, you can use RLearner if you want to learning after the episode:
+Alternatively, you can use RLearner if you want to learn after the episode:
 
 ```java
 
@@ -194,7 +194,7 @@ for(int time=0; time < 1000; ++time){
 }
 ```
 
-Alternatively, you can use QLearner if you want to learning after the episode:
+Alternatively, you can use QLearner if you want to learn after the episode:
 
 ```java
 
@@ -267,7 +267,7 @@ for(int time=0; time < 1000; ++time){
 }
 ```
 
-Alternatively, you can use SarsaLearner if you want to learning after the episode:
+Alternatively, you can use SarsaLearner if you want to learn after the episode:
 
 ```java
 
@@ -351,7 +351,7 @@ for(int time=0; time < 1000; ++time){
 }
 ```
 
-Alternatively, you can use ActorCriticLearner if you want to learning after the episode:
+Alternatively, you can use ActorCriticLearner if you want to learn after the episode:
 
 ```java
 

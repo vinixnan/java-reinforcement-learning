@@ -1,7 +1,7 @@
 package com.github.tens0rfl0w.rl.actionselection;
 
-import com.github.tens0rfl0w.rl.utils.IndexValue;
 import com.github.tens0rfl0w.rl.models.QModel;
+import com.github.tens0rfl0w.rl.utils.IndexValue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.Set;
  */
 public class GibbsSoftMaxActionSelectionStrategy extends AbstractActionSelectionStrategy {
 
-    private Random random = null;
+    private final Random random;
     public GibbsSoftMaxActionSelectionStrategy(){
         random = new Random();
     }
@@ -25,27 +25,23 @@ public class GibbsSoftMaxActionSelectionStrategy extends AbstractActionSelection
 
     @Override
     public Object clone() {
-        GibbsSoftMaxActionSelectionStrategy clone = new GibbsSoftMaxActionSelectionStrategy();
-        return clone;
+        return new GibbsSoftMaxActionSelectionStrategy();
     }
 
     @Override
     public IndexValue selectAction(int stateId, QModel model, Set<Integer> actionsAtState) {
-        List<Integer> actions = new ArrayList<Integer>();
-        if(actionsAtState == null){
-            for(int i=0; i < model.getActionCount(); ++i){
+        List <Integer> actions = new ArrayList <>();
+        if (actionsAtState == null) {
+            for (int i = 0; i < model.getActionCount(); ++i) {
                 actions.add(i);
             }
-        }else{
-            for(Integer actionId : actionsAtState){
-                actions.add(actionId);
-            }
+        } else {
+            actions.addAll(actionsAtState);
         }
 
         double sum = 0;
-        List<Double> plist = new ArrayList<Double>();
-        for(int i=0; i < actions.size(); ++i){
-            int actionId = actions.get(i);
+        List <Double> plist = new ArrayList <>();
+        for (int actionId : actions) {
             double p = Math.exp(model.getQ(stateId, actionId));
             sum += p;
             plist.add(sum);

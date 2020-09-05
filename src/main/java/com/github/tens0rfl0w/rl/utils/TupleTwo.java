@@ -1,5 +1,7 @@
 package com.github.tens0rfl0w.rl.utils;
 
+import java.util.Objects;
+
 /**
  * Created by xschen on 10/11/2015 0011.
  */
@@ -7,7 +9,7 @@ public class TupleTwo<T1, T2> {
     private T1 item1;
     private T2 item2;
 
-    public TupleTwo(T1 item1, T2 item2){
+    public TupleTwo(T1 item1, T2 item2) {
         this.item1 = item1;
         this.item2 = item2;
     }
@@ -29,7 +31,7 @@ public class TupleTwo<T1, T2> {
     }
 
     public static <U1, U2> TupleTwo<U1, U2> create(U1 item1, U2 item2){
-        return new TupleTwo<U1, U2>(item1, item2);
+        return new TupleTwo <>(item1, item2);
     }
 
 
@@ -41,9 +43,9 @@ public class TupleTwo<T1, T2> {
 
         TupleTwo<?, ?> tupleTwo = (TupleTwo<?, ?>) o;
 
-        if (item1 != null ? !item1.equals(tupleTwo.item1) : tupleTwo.item1 != null)
+        if (!Objects.equals(item1, tupleTwo.item1))
             return false;
-        return item2 != null ? item2.equals(tupleTwo.item2) : tupleTwo.item2 == null;
+        return Objects.equals(item2, tupleTwo.item2);
 
     }
 

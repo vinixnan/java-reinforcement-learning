@@ -16,7 +16,7 @@ import java.util.Set;
 @Getter
 @Setter
 public class Vec implements Serializable {
-    private Map<Integer, Double> data = new HashMap<Integer, Double>();
+    private Map <Integer, Double> data = new HashMap <>();
     private int dimension;
     private double defaultValue;
     private int id = -1;
@@ -78,17 +78,17 @@ public class Vec implements Serializable {
 
     @Override
     public boolean equals(Object rhs){
-        if(rhs != null && rhs instanceof Vec){
-            Vec rhs2 = (Vec)rhs;
-            if(dimension != rhs2.dimension){
+        if (rhs instanceof Vec) {
+            Vec rhs2 = (Vec) rhs;
+            if (dimension != rhs2.dimension) {
                 return false;
             }
 
-            if(data.size() != rhs2.data.size()){
+            if (data.size() != rhs2.data.size()) {
                 return false;
             }
 
-            for(Integer index : data.keySet()){
+            for (Integer index : data.keySet()) {
                 if(!rhs2.data.containsKey(index)) return false;
                 if(!DoubleUtils.equals(data.get(index), rhs2.data.get(index))){
                     return false;
@@ -111,9 +111,7 @@ public class Vec implements Serializable {
 
     public void setAll(double value){
         defaultValue = value;
-        for(Integer index : data.keySet()){
-            data.put(index, defaultValue);
-        }
+        data.replaceAll((i, v) -> defaultValue);
     }
 
     public IndexValue indexWithMaxValue(Set<Integer> indices){
@@ -212,7 +210,7 @@ public class Vec implements Serializable {
     }
 
     public Vec multiply(double rhs){
-        Vec clone = (Vec)this.makeCopy();
+        Vec clone = this.makeCopy();
         for(Integer i : data.keySet()){
             clone.data.put(i, rhs * data.get(i));
         }

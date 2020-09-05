@@ -51,13 +51,13 @@ public class Matrix implements Serializable {
 
     @Override
     public boolean equals(Object rhs){
-        if(rhs != null && rhs instanceof Matrix){
-            Matrix rhs2 = (Matrix)rhs;
-            if(rowCount != rhs2.rowCount || columnCount != rhs2.columnCount){
+        if (rhs instanceof Matrix) {
+            Matrix rhs2 = (Matrix) rhs;
+            if (rowCount != rhs2.rowCount || columnCount != rhs2.columnCount) {
                 return false;
             }
 
-            if(defaultValue == rhs2.defaultValue) {
+            if (defaultValue == rhs2.defaultValue) {
                 for (Integer index : rows.keySet()) {
                     if (!rhs2.rows.containsKey(index)) return false;
                     if (!rows.get(index).equals(rhs2.rows.get(index))) {
@@ -154,7 +154,7 @@ public class Matrix implements Serializable {
         int n = A.getColumnCount();
         int rowCount = A.getRowCount();
 
-        List<Vec> Acols = new ArrayList<Vec>();
+        List <Vec> Acols = new ArrayList <>();
 
         for (int c = 0; c < n; ++c)
         {
@@ -211,8 +211,8 @@ public class Matrix implements Serializable {
 
             for (Integer col : rowVec.getData().keySet())
             {
-                if (row == col.intValue()) continue;
-                if(DoubleUtils.equals(rowVec.get(col), this.get(col, row))){
+                if (row == col) continue;
+                if (DoubleUtils.equals(rowVec.get(col), this.get(col, row))) {
                     return false;
                 }
             }

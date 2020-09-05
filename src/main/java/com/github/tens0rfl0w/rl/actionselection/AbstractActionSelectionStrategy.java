@@ -1,8 +1,8 @@
 package com.github.tens0rfl0w.rl.actionselection;
 
-import com.github.tens0rfl0w.rl.utils.IndexValue;
 import com.github.tens0rfl0w.rl.models.QModel;
 import com.github.tens0rfl0w.rl.models.UtilityModel;
+import com.github.tens0rfl0w.rl.utils.IndexValue;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,7 +15,7 @@ import java.util.Set;
 public abstract class AbstractActionSelectionStrategy implements ActionSelectionStrategy {
 
     private String prototype;
-    protected Map<String, String> attributes = new HashMap<String, String>();
+    protected Map <String, String> attributes = new HashMap <>();
 
     public String getPrototype(){
         return prototype;
@@ -47,6 +47,7 @@ public abstract class AbstractActionSelectionStrategy implements ActionSelection
 
     @Override
     public boolean equals(Object obj) {
+        if (!obj.getClass().equals(this.getClass())) return false;
         ActionSelectionStrategy rhs = (ActionSelectionStrategy)obj;
         if(!prototype.equalsIgnoreCase(rhs.getPrototype())) return false;
         for(Map.Entry<String, String> entry : rhs.getAttributes().entrySet()) {

@@ -11,17 +11,16 @@ public class ActionSelectionStrategyFactory {
     public static ActionSelectionStrategy deserialize(String conf){
         String[] comps = conf.split(";");
 
-        HashMap<String, String> attributes = new HashMap<String, String>();
-        for(int i=0; i < comps.length; ++i){
-            String comp = comps[i];
+        HashMap <String, String> attributes = new HashMap <>();
+        for (String comp : comps) {
             String[] field = comp.split("=");
-            if(field.length < 2) continue;
+            if (field.length < 2) continue;
             String fieldname = field[0].trim();
             String fieldvalue = field[1].trim();
 
             attributes.put(fieldname, fieldvalue);
         }
-        if(attributes.isEmpty()){
+        if (attributes.isEmpty()) {
             attributes.put("prototype", conf);
         }
 
@@ -52,7 +51,7 @@ public class ActionSelectionStrategyFactory {
             else{
                 sb.append(";");
             }
-            sb.append(entry.getKey()+"="+entry.getValue());
+            sb.append(entry.getKey()).append("=").append(entry.getValue());
         }
         return sb.toString();
     }

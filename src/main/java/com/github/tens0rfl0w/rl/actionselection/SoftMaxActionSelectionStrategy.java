@@ -1,7 +1,7 @@
 package com.github.tens0rfl0w.rl.actionselection;
 
-import com.github.tens0rfl0w.rl.utils.IndexValue;
 import com.github.tens0rfl0w.rl.models.QModel;
+import com.github.tens0rfl0w.rl.utils.IndexValue;
 
 import java.util.Random;
 import java.util.Set;
@@ -15,13 +15,12 @@ public class SoftMaxActionSelectionStrategy extends AbstractActionSelectionStrat
 
     @Override
     public Object clone(){
-        SoftMaxActionSelectionStrategy clone = new SoftMaxActionSelectionStrategy(random);
-        return clone;
+        return new SoftMaxActionSelectionStrategy(random);
     }
 
     @Override
     public boolean equals(Object obj){
-        return obj != null && obj instanceof SoftMaxActionSelectionStrategy;
+        return obj instanceof SoftMaxActionSelectionStrategy;
     }
 
     public SoftMaxActionSelectionStrategy(){

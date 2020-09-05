@@ -10,7 +10,7 @@ import java.util.List;
 public class VectorUtils {
     public static List<Vec> removeZeroVectors(Iterable<Vec> vlist)
     {
-        List<Vec> vstarlist = new ArrayList<Vec>();
+        List <Vec> vstarlist = new ArrayList <>();
         for (Vec v : vlist)
         {
             if (!v.isZero())
@@ -22,12 +22,10 @@ public class VectorUtils {
         return vstarlist;
     }
 
-    public static TupleTwo<List<Vec>, List<Double>> normalize(Iterable<Vec> vlist)
-    {
-        List<Double> norms = new ArrayList<Double>();
-        List<Vec> vstarlist = new ArrayList<Vec>();
-        for (Vec v : vlist)
-        {
+    public static TupleTwo<List<Vec>, List<Double>> normalize(Iterable<Vec> vlist) {
+        List <Double> norms = new ArrayList <>();
+        List <Vec> vstarlist = new ArrayList <>();
+        for (Vec v : vlist) {
             norms.add(v.norm(2));
             vstarlist.add(v.normalize());
         }

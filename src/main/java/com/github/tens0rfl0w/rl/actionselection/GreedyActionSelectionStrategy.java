@@ -1,7 +1,7 @@
 package com.github.tens0rfl0w.rl.actionselection;
 
-import com.github.tens0rfl0w.rl.utils.IndexValue;
 import com.github.tens0rfl0w.rl.models.QModel;
+import com.github.tens0rfl0w.rl.utils.IndexValue;
 
 import java.util.Set;
 
@@ -17,12 +17,11 @@ public class GreedyActionSelectionStrategy extends AbstractActionSelectionStrate
 
     @Override
     public Object clone(){
-        GreedyActionSelectionStrategy clone = new GreedyActionSelectionStrategy();
-        return clone;
+        return new GreedyActionSelectionStrategy();
     }
 
     @Override
     public boolean equals(Object obj){
-        return obj != null && obj instanceof GreedyActionSelectionStrategy;
+        return obj instanceof GreedyActionSelectionStrategy;
     }
 }

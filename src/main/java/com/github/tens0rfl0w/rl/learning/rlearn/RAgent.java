@@ -3,7 +3,6 @@ package com.github.tens0rfl0w.rl.learning.rlearn;
 import com.github.tens0rfl0w.rl.utils.IndexValue;
 
 import java.io.Serializable;
-import java.util.Random;
 import java.util.Set;
 
 
@@ -42,10 +41,10 @@ public class RAgent implements Serializable{
 
     @Override
     public boolean equals(Object obj){
-        if(obj != null && obj instanceof RAgent){
-            RAgent rhs = (RAgent)obj;
-            if(!learner.equals(rhs.learner)) return false;
-            if(currentAction != rhs.currentAction) return false;
+        if (obj instanceof RAgent) {
+            RAgent rhs = (RAgent) obj;
+            if (!learner.equals(rhs.learner)) return false;
+            if (currentAction != rhs.currentAction) return false;
             return currentState == rhs.currentState;
         }
         return false;

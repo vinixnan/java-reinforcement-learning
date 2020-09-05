@@ -1,7 +1,7 @@
 package com.github.tens0rfl0w.rl.actionselection;
 
-import com.github.tens0rfl0w.rl.utils.IndexValue;
 import com.github.tens0rfl0w.rl.models.QModel;
+import com.github.tens0rfl0w.rl.utils.IndexValue;
 
 import java.util.*;
 
@@ -29,11 +29,10 @@ public class EpsilonGreedyActionSelectionStrategy extends AbstractActionSelectio
 
     @Override
     public boolean equals(Object obj){
-        if(obj != null && obj instanceof EpsilonGreedyActionSelectionStrategy){
-            EpsilonGreedyActionSelectionStrategy rhs = (EpsilonGreedyActionSelectionStrategy)obj;
-            if(epsilon() != rhs.epsilon()) return false;
-           // if(!random.equals(rhs.random)) return false;
-            return true;
+        if (obj instanceof EpsilonGreedyActionSelectionStrategy) {
+            EpsilonGreedyActionSelectionStrategy rhs = (EpsilonGreedyActionSelectionStrategy) obj;
+            return epsilon() == rhs.epsilon();
+            // if(!random.equals(rhs.random)) return false;
         }
         return false;
     }

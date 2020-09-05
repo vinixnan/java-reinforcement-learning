@@ -3,9 +3,7 @@ package com.github.tens0rfl0w.rl.learning.actorcritic;
 import com.github.tens0rfl0w.rl.utils.Vec;
 
 import java.io.Serializable;
-import java.util.Random;
 import java.util.Set;
-import java.util.function.Function;
 
 
 /**

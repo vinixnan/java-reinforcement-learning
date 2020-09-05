@@ -1,11 +1,10 @@
 package com.github.tens0rfl0w.rl.actionselection;
 
-import com.github.tens0rfl0w.rl.utils.IndexValue;
 import com.github.tens0rfl0w.rl.models.QModel;
 import com.github.tens0rfl0w.rl.models.UtilityModel;
+import com.github.tens0rfl0w.rl.utils.IndexValue;
 
 import java.io.Serializable;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 

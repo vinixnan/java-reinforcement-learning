@@ -32,8 +32,8 @@ public class IndexValue {
 
    @Override
    public boolean equals(Object rhs){
-      if(rhs != null && rhs instanceof IndexValue){
-         IndexValue rhs2 = (IndexValue)rhs;
+      if (rhs instanceof IndexValue) {
+         IndexValue rhs2 = (IndexValue) rhs;
          return index == rhs2.index && value == rhs2.value;
       }
       return false;
